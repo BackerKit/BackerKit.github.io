@@ -1,0 +1,122 @@
+html {
+  font-size: 20px;
+  font-family: "aglet-slab", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  background-image: svg-uri('<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="background:#fff" viewBox="0 0 30 30"><path d="M0 0h15v15H0zm15 15h15v15H15z" fill="#F9F9F9" fill-rule="evenodd"/></svg>');
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8em 1em;
+  @media screen and (min-width: $tablet) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+.tiles {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  box-shadow: 0 0 50px 0 rgba(0,0,0,0.25);
+}
+
+.tile {
+  padding: 1em;
+  
+  &::before {
+    content: '';
+    float: left;
+    width: 1px;
+    margin-left: -1px;
+    height: 0;
+    padding-bottom: 100%;
+  }
+}
+
+@media screen and (min-width: 0px) {
+  .tiles { max-width: $tile-max-width; }
+  .tile  { width: 100%; }
+}
+@media screen and (min-width: $tablet) {
+  .tiles { max-width: $tile-max-width * 2; }
+  .tile  { width: 50%; }
+}
+@media screen and (min-width: $desktop) {
+  .tiles { max-width: $tile-max-width * 4; }
+  .tile  { width: 25%; }
+}
+
+
+
+
+@media screen and (min-width: $tablet) {
+/*
+      2x4 Layout
+  ┌───────┬───────┐
+  │       │       │
+  │   B   │ intro │
+  │       │       │
+  ├───────┼───────┤
+  │ date  │       │
+  │   +   │   O   │
+  │ local │       │
+  ├───────┼───────┤
+  │       │       │
+  │   N   │  tix  │
+  │       │       │
+  ├───────┼───────┤
+  │       │       │
+  │ by bk │   D   │
+  │       │       │
+  └───────┴───────┘
+*/
+
+//.tile--B         { order: 0; }
+//.tile--intro     { order: 0; }
+  .tile--datelocal { order: 1; }
+  .tile--O         { order: 2; }
+  .tile--N         { order: 3; }
+  .tile--tickets   { order: 4; }
+  .tile--credit    { order: 5; }
+  .tile--D         { order: 6; }
+}
+  
+@media screen and (min-width: $desktop) {
+
+/* 
+            4x2 Layout
+  ┌───────┬───────┬───────┬───────┐
+  │       │       │       │       │
+  │   B   │ intro │   N   │ by bk │
+  │       │       │       │       │
+  ├───────┼───────┼───────┼───────┤
+  │ date  │       │       │       │
+  │   +   │   O   │  tix  │   D   │
+  │ local │       │       │       │
+  └───────┴───────┴───────┴───────┘
+*/
+
+//.tile--B         { order: 0; }
+//.tile--intro     { order: 0; }
+  .tile--N         { order: 1; }
+  .tile--credit    { order: 2; }
+  .tile--datelocal { order: 3; }  
+  .tile--O         { order: 4; }
+  .tile--tickets   { order: 5; }
+  .tile--D         { order: 6; }
+}

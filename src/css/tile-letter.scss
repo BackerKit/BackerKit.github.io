@@ -1,0 +1,62 @@
+.tile--letter {
+  position: relative;
+}
+
+.tile--letter img {
+  display: block;
+  position: absolute;
+  height: 129%;
+  width: auto;
+}
+
+.tile--B img {
+  left: 4%;
+  top: -35%;
+}
+
+.tile--O img {
+  left: 15%;
+  top: -20%;
+
+  @media screen and (min-width: $tablet) {
+    left: 15%;
+    top: -20%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    top: -6.5%;
+    left: 7%;
+  }
+}
+
+.tile--N img {
+  left: -19%;
+  top: -25%;
+  height: 122%;
+
+  @media screen and (min-width: $tablet) {
+    left: -24%;
+    top: -10%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 125%;
+    left: 15%;
+    top: -40%;
+  }
+}
+
+.tile--D img {
+  left: -15%;
+  top: 20%;
+
+  @media screen and (min-width: $tablet) {
+    left: -15%;
+    top: 10%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    top: 7%;
+    left: 3%;
+  }
+}

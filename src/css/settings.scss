@@ -1,0 +1,29 @@
+$tile-min-width: 290px;
+$tile-max-width: 350px;
+$site-padding: 20px;
+$tablet: 2 * $tile-min-width + 2 * $site-padding;
+$desktop: 4 * $tile-min-width + 2 * $site-padding;
+
+$colors: (
+  'tile-bg':        #52DEC9,
+  'tile-text':      #16574D,
+  'main-tile-bg':   #634AD0,
+  'main-tile-text': #FFF
+);
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+ }
+
+@function em($pxval, $base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
