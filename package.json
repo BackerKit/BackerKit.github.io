@@ -20,7 +20,8 @@
     "type": "git",
     "url": "git+https://github.com/BackerKit/backerkit-summit.git"
   },
-  "license": "",
+  "private": true,
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/BackerKit/backerkit-summit/issues"
   },
