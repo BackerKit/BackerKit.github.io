@@ -46,19 +46,15 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('clean', function() {
-  return gulp.src('dist/**/*', { read: false }).pipe(clean());
+  gulp.src('dist/*', { read: false }).pipe(clean());
 });
 
-gulp.task('push', function() {
-  return gulp.src('dist/**/*').pipe(gh_pages())
+gulp.task('deploy', function() {
+  gulp.src('dist/**/*').pipe(gh_pages())
 });
-
 
 // Basic build task
 gulp.task('build', ['html', 'css', 'img']);
 
 // Default task for development: build, browser sync, watch
 gulp.task('default', ['build', 'browser-sync', 'watch']);
-
-// Deployment task: cleans dist/, builds, and pushes to gh-pages
-gulp.task('deploy', ['clean', 'build', 'push']);
