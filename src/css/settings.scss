@@ -5,9 +5,9 @@ $tablet: 2 * $tile-min-width + 2 * $site-padding;
 $desktop: 4 * $tile-min-width + 2 * $site-padding;
 
 $colors: (
-  'tile-bg':        #52DEC9,
-  'tile-text':      #16574D,
-  'main-tile-bg':   #634AD0,
+  'tile-bg':        #3EE6CC,
+  'tile-text':      #303957,
+  'main-tile-bg':   HSL(265, 70%, 45%),
   'main-tile-text': #FFF
 );
 @function color($color) {
