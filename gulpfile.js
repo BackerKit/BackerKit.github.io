@@ -50,7 +50,9 @@ gulp.task('clean', function() {
 });
 
 gulp.task('deploy', function() {
-  gulp.src('dist/**/*').pipe(gh_pages());
+  gulp.src('dist/**/*').pipe(gh_pages({
+    branch: 'master'
+  }));
 });
 
 gulp.task('production', function() {
