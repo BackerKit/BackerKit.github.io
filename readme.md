@@ -16,6 +16,6 @@ A browser window will appear, hack away.
 ```
 npm install
 gulp clean
-gulp build
+gulp build:prod
 gulp deploy
 ```

@@ -50,11 +50,19 @@ gulp.task('clean', function() {
 });
 
 gulp.task('deploy', function() {
-  gulp.src('dist/**/*').pipe(gh_pages())
+  gulp.src('dist/**/*').pipe(gh_pages());
+});
+
+gulp.task('production', function() {
+  // Copy CNAME to dist folder for GH Pages
+  gulp.src('src/CNAME').pipe(gulp.dest('dist'));
 });
 
 // Basic build task
-gulp.task('build', ['html', 'css', 'img']);
+gulp.task('build:dev', ['html', 'css', 'img']);
+
+// Build production task
+gulp.task('build:prod', ['html', 'css', 'img', 'production']);
 
 // Default task for development: build, browser sync, watch
-gulp.task('default', ['build', 'browser-sync', 'watch']);
+gulp.task('default', ['build:dev', 'browser-sync', 'watch']);
