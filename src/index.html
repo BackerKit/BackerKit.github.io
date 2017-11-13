@@ -54,7 +54,7 @@
       <img src="img/B.svg" alt="">
     </div>
     <div class="tile tile--content tile--intro">
-      <h1>Bond</h1> is a new, intimate conference that examines how creators make a living through the internet.
+      <h1>Bond</h1> <p>is a new, intimate conference that examines how creators make a living through the internet.</p>
     </div>
     <div class="tile tile--letter tile--O">
       <img src="img/O.svg" alt="">
@@ -101,5 +101,13 @@
       </div>
     </div>
   </div>
+  <script>
+    // Prevent animations from firing twice  
+    window.onload = function () {
+      window.setTimeout(function() {
+        document.querySelector('html').classList.add('loaded');
+      }, 1000);
+    };
+  </script>
 </body>
 </html>

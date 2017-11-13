@@ -45,6 +45,14 @@
   
 }
 
+.tile--intro > * {
+  display: inline;
+}
+
+.tile--content > * {
+  animation: $animation-duration ease-out both fadeIn;
+}
+
 .tile--tickets form {
 
   margin-top: .15em;

@@ -9,6 +9,28 @@
   width: auto;
 }
 
+:not(.loaded) .tile--B img {
+  animation: slideRight $animation-duration both ease-out;
+  @media screen and (min-width: $tablet) { animation-name: slideDown; }
+  @media screen and (min-width: $desktop) { animation-name: slideRight; }
+}
+:not(.loaded) .tile--O img {
+  animation: slideLeft $animation-duration both ease-out;
+  @media screen and (min-width: $tablet) { animation-name: slideLeft; }
+  @media screen and (min-width: $desktop) { animation-name: slideUp; }
+}
+:not(.loaded) .tile--N img {
+  animation: slideRight $animation-duration both ease-out;
+  @media screen and (min-width: $tablet) { animation-name: slideRight; }
+  @media screen and (min-width: $desktop) { animation-name: slideDown; }
+}
+:not(.loaded) .tile--D img {
+  animation: slideLeft $animation-duration both ease-out;
+  @media screen and (min-width: $tablet) { animation-name: slideUp; }
+  @media screen and (min-width: $desktop) { animation-name: slideLeft; }
+}
+
+
 .tile--B img {
   left: 4%;
   top: -35%;

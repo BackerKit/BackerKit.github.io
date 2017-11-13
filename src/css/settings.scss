@@ -1,8 +1,14 @@
 $tile-min-width: 290px;
 $tile-max-width: 350px;
+
 $site-padding: 20px;
-$tablet: 2 * $tile-min-width + 2 * $site-padding;
-$desktop: 4 * $tile-min-width + 2 * $site-padding;
+
+$tablet:  700px;
+$desktop: 1200px;
+
+$slide-length: 20%;
+$animation-duration: 1s;
+
 
 $colors: (
   'tile-bg':        #3EE6CC,
