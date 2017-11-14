@@ -1,47 +1,47 @@
 @keyframes fadeIn {
-  0%    { opacity: 0; }
-  100%  { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideDown {
-  0%   {
-    transform: translateY(-$slide-length);
-    opacity:  0;
+  from {
+    transform: translateY(-1 * $slide-length);
+    opacity:  0.5;
   }
-  100% {
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
 @keyframes slideUp {
-  0%   {
+  from {
     transform: translateY($slide-length);
-    opacity:  0;
+    opacity:  0.5;
   }
-  100% {
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
 @keyframes slideLeft {
-  0%   {
+  from {
     transform: translateX($slide-length);
-    opacity:  0;
+    opacity:  0.5;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes slideRight {
-  0%   {
-    transform: translateX(-$slide-length);
-    opacity:  0;
+  from {
+    transform: translateX(-1 * $slide-length);
+    opacity:  0.5;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }

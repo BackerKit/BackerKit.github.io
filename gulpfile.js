@@ -6,11 +6,14 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     plumber      = require('gulp-plumber'),
     clean        = require('gulp-clean'),
-    gh_pages     = require('gulp-gh-pages');
+    gh_pages     = require('gulp-gh-pages'),
+    nunjucks     = require('gulp-nunjucks');
 
 gulp.task('html', function() {
   // copy any html files in source/ to public/
-  gulp.src('src/*.html').pipe(gulp.dest('dist'));
+  gulp.src('src/*.html')
+    .pipe(nunjucks.compile())
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('css', function() {
@@ -35,7 +38,7 @@ gulp.task('img', function() {
 
 gulp.task('watch', function(){
   gulp.watch('src/css/**/*.scss', ['css']);
-  gulp.watch('src/*.html', ['html']).on('change', bs.reload);
+  gulp.watch(['src/*.html', 'src/includes/**/*'], ['html']).on('change', bs.reload);
   gulp.watch('src/img/*', ['img']);
 });
 

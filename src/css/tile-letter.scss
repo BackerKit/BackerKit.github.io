@@ -2,41 +2,53 @@
   position: relative;
 }
 
-.tile--letter img {
-  display: block;
+.tile--letter figure {
   position: absolute;
+  height: 100%;
+  width: 100%;
+  will-change: opacity, transform;
+  position: absolute;
+}
+
+.tile--letter svg {
+  display: block;
   height: 129%;
   width: auto;
 }
 
-:not(.loaded) .tile--B img {
+.tile--letter.tile--N svg {
+  height: 122%;
+  @media screen and (min-width: $desktop) { height: 125%; }
+}
+
+html:not(.loaded) .tile--B figure {
   animation: slideDown $animation-duration both ease-out;
   @media screen and (min-width: $tablet) { animation-name: slideDown; }
   @media screen and (min-width: $desktop) { animation-name: slideRight; }
 }
-:not(.loaded) .tile--O img {
+html:not(.loaded) .tile--O figure {
   animation: slideLeft $animation-duration both ease-out;
   @media screen and (min-width: $tablet) { animation-name: slideLeft; }
   @media screen and (min-width: $desktop) { animation-name: slideUp; }
 }
-:not(.loaded) .tile--N img {
+html:not(.loaded) .tile--N figure {
   animation: slideRight $animation-duration both ease-out;
   @media screen and (min-width: $tablet) { animation-name: slideRight; }
   @media screen and (min-width: $desktop) { animation-name: slideDown; }
 }
-:not(.loaded) .tile--D img {
+html:not(.loaded) .tile--D figure {
   animation: slideUp $animation-duration both ease-out;
   @media screen and (min-width: $tablet) { animation-name: slideUp; }
   @media screen and (min-width: $desktop) { animation-name: slideLeft; }
 }
 
 
-.tile--B img {
+.tile--B figure {
   left: 4%;
   top: -35%;
 }
 
-.tile--O img {
+.tile--O figure {
   left: 15%;
   top: -20%;
 
@@ -51,10 +63,9 @@
   }
 }
 
-.tile--N img {
+.tile--N figure {
   left: -19%;
   top: -25%;
-  height: 122%;
 
   @media screen and (min-width: $tablet) {
     left: -24%;
@@ -62,13 +73,12 @@
   }
 
   @media screen and (min-width: $desktop) {
-    height: 125%;
     left: 15%;
     top: -40%;
   }
 }
 
-.tile--D img {
+.tile--D figure {
   left: -15%;
   top: 20%;
 
