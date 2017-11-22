@@ -59,8 +59,8 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('production', function() {
-  // Copy CNAME to dist folder for GH Pages
-  gulp.src(['src/CNAME', 'src/.pairs']).pipe(gulp.dest('dist'));
+  // Copy files in src for GH Pages, except HTML (handled separately)
+  gulp.src(['src/.pairs', 'src/README.md']).pipe(gulp.dest('dist'));
 });
 
 // Basic build task
