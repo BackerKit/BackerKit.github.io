@@ -53,14 +53,14 @@ gulp.task('clean', function() {
 });
 
 gulp.task('deploy', function() {
-  gulp.src('dist/**/*').pipe(gh_pages({
+  gulp.src('dist/**/*', {dot: true}).pipe(gh_pages({
     branch: 'master'
   }));
 });
 
 gulp.task('production', function() {
-  // Copy files in src for GH Pages, except HTML (handled separately)
-  gulp.src(['src/.pairs', 'src/README.md']).pipe(gulp.dest('dist'));
+  // Copy files in src for GH Pages, except HTML and folders(handled separately)
+  gulp.src('src/!(*.html)', { nodir: true }).pipe(gulp.dest('dist'));
 });
 
 // Basic build task
